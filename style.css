@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 100vw;
+    min-height: 100vh; /* tránh khi xoay ngang hở do quá 100vh, tự giãn khi cần */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #454545;
+}
+
+.container {
+    margin: 10rem 2rem 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-wrapper {
+    width: 10rem;
+    position: absolute;
+    top: -22%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.backround-img {
+    width: 100%;
+    padding-top: 100%;
+    border-radius: 50%;
+    background: url(avatar.png) no-repeat center / cover;
+    box-shadow: 0 0 5px white;
+}
+
+.general-infos {
+    /* Lúc đầu cần để set effect, sau có thể bỏ để children của nó tự kéo ra */
+    /* min-height: 500px;
+    min-width: 500px; */
+    border-radius: 40px;
+    box-shadow: 0 0 20px 2px #2e2b2b;
+    background-color: #2e2b2b;
+    position: relative;
+    overflow: hidden;
+}
+
+.general-infos::before {
+    content: '';
+    background-image: linear-gradient(180deg, #12c2e9, #c471ed, #f64f59);
+    width: 1000px;
+    height: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: circle 3s linear infinite;
+}
+
+.general-infos::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 40px;
+    background-color: #2e2b2b;
+}
+
+.content {
+    z-index: 10;
+    min-width: 500px;
+    min-height: 500px;
+    padding: 1.25rem 1.25rem 1.25rem 1.8rem;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.content > * {
+    width: 100%;
+}
+
+.about-me {
+    margin-top: 5%;
+    text-align: left;
+}
+
+h3 {
+    color: #da4848;
+}
+
+ul {
+    margin-top: 0.6rem;
+    padding-left: 2rem;
+    list-style-type: circle;
+}
+
+li label {
+    color: #12c2e9;
+    display: inline-block;
+    width: 6rem;
+}
+
+li span {
+    color: #a58af3;
+    margin-left: 0.8rem;
+}
+
+.contact {
+    margin-top: 10%;
+}
+
+.contact i {
+    margin-right: 10%;
+}
+
+.social {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social a {
+    padding: 10px 15px;
+}
+
+.social i {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #009eff;
+    animation: wave 1.2s linear calc(0.1s * var(--delay)) infinite;
+    transition: all 0.3s linear;
+}
+
+.social a:hover i {
+    transform: scale(1.5);
+    color: red;
+}
+
+/* .social a:hover i {
+    animation-play-state: paused;
+} */
+
+@keyframes circle {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-15px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 636px) {
+    html {
+        font-size: 14px;
+    }
+
+    .background-wrapper {
+        top: -18%;
+    }
+}
+
+@media (max-width: 540px) {
+    html {
+        font-size: 12px;
+    }
+
+    .background-wrapper {
+        top: -15%;
+    }
+
+    .general-infos {
+        /* width: 30rem; */
+        min-width: 200px;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+    
+    .content {
+        min-width: 200px;
+        max-width: 100%;
+        padding: 0 5px 0 15px;
+
+        /* padding-left: 2rem; */
+    }
+
+    ul {
+        padding-left: 1.5rem
+    }
+    
+    li {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    li label {
+        display: inline-block;
+        width: 25%;
+        height: 100%;
+    }
+    li span {
+        display: inline-block;
+        width: 65%;
+        height: 100%;
+    }
+
+    .social a {
+        padding: 0.3rem 0.8rem;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Self-Introduction</title>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="background-wrapper"><div class="backround-img"></div></div>
+                <div class="general-infos">
+                    <div class="content">
+                        <div class="about-me">
+                            <h3>About me</h3>
+                            <ul>
+                                <li><label>Full name</label>: <span>Dao Van Quyen</span></li>
+                                <li><label>Birthday</label>: <span>04-05-2002</span></li>
+                                <li><label>From</label>: <span>Nam Dinh</span></li>
+                                <li>
+                                    <label>Study at</label>:
+                                    <span>University of Engineering and Technology</span>
+                                </li>
+                                <li>
+                                    <label>Major</label>:
+                                    <span>Computer Science - Information&nbsp;Technology</span>
+                                </li>
+                                <li><label>Student ID</label>: <span>20021422</span></li>
+                                <li><label>GPA</label>: <span>3.5</span></li>
+                                <li>
+                                    <label>Favorite</label>:
+                                    <span>Nothing since July 4, 22</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contact">
+                            <h3>Contact</h3>
+                            <ul>
+                                <li>
+                                    <label>
+                                        <i class="fa-regular fa-envelope"></i>
+                                        Email </label
+                                    >:
+                                    <span>20021422@vnu.edu.vn</span>
+                                </li>
+                                <li>
+                                    <label>
+                                        <i class="fas fa-regular fa-phone"></i>
+                                        Phone </label
+                                    >:
+                                    <span>0xxx.xxx.xxx</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.facebook.com/profile.php?id=100015622656560"
+                                ><i style="--delay: 0" class="fa-brands fa-facebook"></i
+                            ></a>
+                            <a href="#"><i style="--delay: 1" class="fa-brands fa-youtube"></i></a>
+                            <a href="https://github.com/quyendv"
+                                ><i style="--delay: 2" class="fa-brands fa-github"></i
+                            ></a>
+                            <a href="#"><i style="--delay: 3" class="fa-brands fa-facebook-messenger"></i></a>
+                            <a href="#"><i style="--delay: 4" class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i style="--delay: 5" class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i style="--delay: 6" class="fa-brands fa-telegram"></i></a>
+                            <a href="#"><i style="--delay: 7" class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i style="--delay: 8" class="fa-brands fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        // JS hơn css paused và running đồng thời nhiều phần tử
+        const social = document.querySelector('.social');
+        const socialIcons = social.querySelectorAll('.social i');
+        // mouseover + mouseout / mouseenter + mouseleave
+        social.onmouseover = () => {
+            socialIcons.forEach(element => {
+                // element.style.animationPlayState = 'paused';
+                element.style.animation = 'none'; // or 'null' not null
+            });
+        };
+        social.onmouseout = () => {
+            socialIcons.forEach(element => {
+                // element.style.animationPlayState = 'running';
+                element.style.animation = 'wave 1.2s linear calc(0.1s * var(--delay)) infinite';
+            });
+        };
+    </script>
+</html>
